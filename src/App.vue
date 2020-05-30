@@ -1,17 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+    <ocrModule :regions="this.rectangles"/>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ocrModule from './components/ocrModule/ocrModule.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ocrModule
+  },
+  data(){
+    return {
+      rectangles: [
+        {
+          left: 6,
+          top: 20,
+          width: 400,
+          height: 50
+        },
+        {
+          left: 170,
+          top: 130,
+          width: 400,
+          height: 50
+        }
+      ]
+    }
   }
 }
 </script>
